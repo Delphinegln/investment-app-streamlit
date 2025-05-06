@@ -17,7 +17,7 @@ import numpy as np
 # CONFIGURATION
 # --------------------------
 st.set_page_config(page_title="Asset Allocation Advisor", layout="wide")
-st.title("📊 Investment Recommendation Based on Your Risk Profile")
+st.title("📊 Your Portfolio, Your Playground: Choose Your Risk!")
 
 start_date = datetime.date.today() - datetime.timedelta(days=5*365)
 start_date = start_date.strftime("%Y-%m-%d")
@@ -95,7 +95,7 @@ with st.sidebar:
     amount = st.number_input("💰 Amount to invest (€)", min_value=1000.0, step=1000.0, value=10_000.0)
     risk_profile = st.selectbox("🎯 Risk Profile", ["Conservative", "Balanced", "Aggressive"])
     horizon = st.selectbox("📅 Investment Horizon", ["Short", "Medium", "Long"])
-    desired_return = st.slider("📈 Desired Annual Return (%)", 0.0, 20.0, 5.0)
+    desired_return = st.slider("📈 Desired Annual Return (%)", 0.0, 100.0, 5.0)
 
 # --------------------------
 # RESULT DISPLAY
@@ -103,7 +103,7 @@ with st.sidebar:
 
 volatility_data = load_data()
 
-if st.button("📥 Generate Investment Suggestion"):
+if st.button("📥 Click here to find your Investment Suggestions!"):
     suggestions = suggest_products(volatility_data, risk_profile, amount)
 
     if suggestions:
