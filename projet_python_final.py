@@ -7,10 +7,10 @@ Original file is located at
     https://colab.research.google.com/drive/1Qe0ifSfjSf7rZIBhhoZoWOI_8F0IJH11
 """
 
-pip install streamlit
-pip install yfinance
-pip install --upgrade yfinance
-pip install fuzzywuzzy[speedup]
+! pip install streamlit
+! pip install yfinance
+! pip install --upgrade yfinance
+! pip install fuzzywuzzy[speedup]
 import streamlit as st
 import yfinance as yf
 import pandas as pd
