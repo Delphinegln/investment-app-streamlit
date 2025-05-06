@@ -26,7 +26,7 @@ end_date = datetime.date.today().strftime("%Y-%m-%d")
 # Define the tickers
 ticker_symbols = ["AAPL","TSLA","JNJ","NVDA","AIR.PA","SIE.DE","OR.PA","NESN.SW","TCS.NS",
                   "VALE","BABA","NIO","VOO","VEA","VWO","ARKK","FBALX","VBIAX","TLT","BND",
-                  "IEI","SHV","GLD","BTC-USD"]
+                  "IEI","SHV","GLD","BTC-USD","AMZN","GOOGL","META","PYPL","DIS","PEP","V","NFLX","INTC","WMT","VOW3.DE","BAYN.DE","ASML.AS","LHA.DE","RDSA.AS","BMW.DE","CHL","NIO","QQQ","SPY","EFA","IEMG","XLF","XLE"]
 
 all_data = pd.DataFrame()
 volatility_data = []
