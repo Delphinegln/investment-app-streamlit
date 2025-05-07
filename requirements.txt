@@ -3,5 +3,7 @@ yfinance
 pandas
 datetime
 numpy
+warnings
 fuzzywuzzy
 python-Levenshtein
+matplotlib
