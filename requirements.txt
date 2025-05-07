@@ -6,4 +6,3 @@ numpy
 warnings
 fuzzywuzzy
 python-Levenshtein
-matplotlib
