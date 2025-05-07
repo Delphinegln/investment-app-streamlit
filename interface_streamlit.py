@@ -130,7 +130,7 @@ with st.form("investment_form"):
     horizon = st.selectbox("🕒 Investment Horizon", ["Short", "Medium", "Long"])
     
     # 🎯 Curseur pour le rendement
-    desired_return = st.slider("🎯 Desired Annual Return (%)", min_value=1.0, max_value=70.0, step=0.5, value=6.0, 
+    desired_return = st.slider("🎯 Desired Annual Return (%)", min_value=1.0, max_value=40.0, step=0.5, value=6.0, 
                                help="Select your target annual return.")
     
     submitted = st.form_submit_button("Get Magic!")
@@ -151,5 +151,19 @@ if submitted:
         st.markdown(f"**Average Portfolio Volatility:** `{avg_vol:.2%}`")
         st.markdown(f"**Average Portfolio Return:** `{avg_ret:.2%}`")
 
+        # Adding a conclusion text with variables
+        st.markdown(f"""
+        🎉 Congratulations! Based on the details you provided, here is your customized portfolio:
+
+        ✅ **Investment Amount**: €{amount}
+        ✅ **Risk Profile**: {risk_profile}
+        ✅ **Investment Horizon**: {horizon}
+        ✅ **Desired Return**: {desired_return}% per year
+
+        📊 **Average Portfolio Volatility**: `{avg_vol:.2%}`
+        📈 **Average Portfolio Return**: `{avg_ret:.2%}`
+
+        We hope this helps you on your investment journey! 💪
+        """)
     else:
         st.markdown("**Sorry, no results found according to your criteria. Please try adjusting your filters and try again!**")
