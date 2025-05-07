@@ -107,11 +107,20 @@ def suggest_products(volatility_data, risk_profile, amount, desired_return, hori
 # -------------------- STREAMLIT UI --------------------
 
 st.set_page_config(page_title="Smart Investment Assistant", layout="centered")
-st.title("💼 Smart Investment Portfolio Recommender")
+st.title("🎩 Abracadabra! Time to Make Your Investments Grow Faster Than Your WiFi Speed!")
 
 st.markdown("""
-Welcome to your personalized investment assistant!  
-Answer a few questions to receive a tailored portfolio recommendation based on your profile.
+🎯 Welcome in your personal investment allocation assistant!
+
+This tool has been designed to help you select an investment portfolio suited to your profile. By answering a few simple questions about your amount to invest, your risk tolerance, your investment horizon and your desired return, you'll get:
+
+✅ A selection of financial products (equities, ETFs, funds, bonds, crypto, etc.) corresponding to your profile.
+✅ An estimate of your portfolio's average volatility and potential return.
+✅ A proposal adapted to the amount invested, with an adjusted number of products for greater diversification.
+
+This simulator uses historical financial data from the last 5 years to assess asset performance and volatility.
+
+🔐 No personal data is stored: everything remains confidential and local to your session.
 """)
 
 with st.form("investment_form"):
@@ -124,7 +133,7 @@ with st.form("investment_form"):
     desired_return = st.slider("🎯 Desired Annual Return (%)", min_value=1.0, max_value=80.0, step=0.5, value=6.0, 
                                help="Select your target annual return.")
     
-    submitted = st.form_submit_button("Get Recommendations")
+    submitted = st.form_submit_button("Get Magic!")
 
 if submitted:
     with st.spinner("Fetching data and computing suggestions... Please wait. ⏳"):
