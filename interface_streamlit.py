@@ -130,7 +130,7 @@ with st.form("investment_form"):
     horizon = st.selectbox("🕒 Investment Horizon", ["Short", "Medium", "Long"])
     
     # 🎯 Curseur pour le rendement
-    desired_return = st.slider("🎯 Desired Annual Return (%)", min_value=1.0, max_value=40.0, step=0.5, value=6.0, 
+    desired_return = st.slider("🎯 Desired Annual Return (%)", min_value=1.0, max_value=70.0, step=0.5, value=6.0, 
                                help="Select your target annual return.")
     
     submitted = st.form_submit_button("Get Magic!")
