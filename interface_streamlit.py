@@ -3,7 +3,6 @@ import yfinance as yf
 import pandas as pd
 import datetime
 import numpy as np
-import matplotlib.pyplot as plt
 from fuzzywuzzy import fuzz
 import warnings
 
@@ -114,16 +113,3 @@ if st.sidebar.button("Generate Portfolio"):
     st.markdown(f"**Average Portfolio Volatility:** `{avg_volatility:.2%}`")
     st.markdown(f"**Average Portfolio Return:** `{avg_return:.2%}`")
 
-    # Graph
-    tickers = [p["Ticker"] for p in suggestions]
-    filtered = all_data[[f"{ticker}_Close" for ticker in tickers]]
-    normed = filtered / filtered.iloc[0] * 100
-
-    fig, ax = plt.subplots(figsize=(10, 6))
-    normed.plot(ax=ax)
-    ax.set_title("📈 Price Evolution of Suggested Products (Base 100)")
-    ax.set_xlabel("Date")
-    ax.set_ylabel("Normalized Price")
-    ax.legend(tickers, loc="best", fontsize='small', ncol=3)
-    ax.grid(True)
-    st.pyplot(fig)
