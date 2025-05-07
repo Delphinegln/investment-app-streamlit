@@ -9,7 +9,6 @@ import datetime
 import numpy as np
 import warnings
 from fuzzywuzzy import fuzz
-import matplotlib.pyplot as plt
 
 # Define the period
 start_date = datetime.date.today() - datetime.timedelta(days=5*365)
@@ -229,26 +228,6 @@ def suggest_products(volatility_data, risk_profile, amount,desired_return, horiz
 
     # Filter all_data to include only suggested tickers
     filtered_data = all_data[[f'{ticker}_Close' for ticker in suggested_tickers]]
-
-    # Normalize to base 100
-    normalized_data = filtered_data / filtered_data.iloc[0] * 100
-
-    # Create the plot
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore", category=pd.errors.PerformanceWarning)
-        normalized_data.plot(figsize=(10, 6))
-        plt.title("Price Evolution of Suggested Products (Base 100)")
-        plt.xlabel("Date")
-        plt.ylabel("Normalized Price")
-        plt.grid(True)
-
-        # Update the legend to include only selected tickers
-        plt.legend(suggested_tickers, loc="best", fontsize='small', ncol=3)
-
-        plt.tight_layout()
-        plt.show()
-
-        print("Please find your portfolio price visualisation!")
 
 
 # Execution
