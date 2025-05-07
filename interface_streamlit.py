@@ -109,7 +109,7 @@ def suggest_products(volatility_data, risk_profile, amount, desired_return, hori
 st.set_page_config(page_title="Smart Investment Assistant", layout="centered")
 st.title("🎩 Abracadabra! Time to Make Your Investments Grow Faster Than Your WiFi Speed!")
 
-st.markdown("""
+st.markdown("""  
 🎯 Welcome in your personal investment allocation assistant!
 
 This tool has been designed to help you select an investment portfolio suited to your profile. By answering a few simple questions about your amount to invest, your risk tolerance, your investment horizon and your desired return, you'll get:
@@ -130,7 +130,7 @@ with st.form("investment_form"):
     horizon = st.selectbox("🕒 Investment Horizon", ["Short", "Medium", "Long"])
     
     # 🎯 Curseur pour le rendement
-    desired_return = st.slider("🎯 Desired Annual Return (%)", min_value=1.0, max_value=80.0, step=0.5, value=6.0, 
+    desired_return = st.slider("🎯 Desired Annual Return (%)", min_value=1.0, max_value=40.0, step=0.5, value=6.0, 
                                help="Select your target annual return.")
     
     submitted = st.form_submit_button("Get Magic!")
@@ -150,3 +150,6 @@ if submitted:
         avg_ret = np.mean([a["Annual_Return"] for a in suggestions])
         st.markdown(f"**Average Portfolio Volatility:** `{avg_vol:.2%}`")
         st.markdown(f"**Average Portfolio Return:** `{avg_ret:.2%}`")
+
+    else:
+        st.markdown("**Sorry, no results found according to your criteria. Please try adjusting your filters and try again!**")
