@@ -114,9 +114,9 @@ st.markdown("""
 
 This tool has been designed to help you select an investment portfolio suited to your profile. By answering a few simple questions about your amount to invest, your risk tolerance, your investment horizon and your desired return, you'll get:
 
-✅ A selection of financial products (equities, ETFs, funds, bonds, crypto, etc.) corresponding to your profile.
-✅ An estimate of your portfolio's average volatility and potential return.
-✅ A proposal adapted to the amount invested, with an adjusted number of products for greater diversification.
+✅ A selection of financial products (equities, ETFs, funds, bonds, crypto, etc.) corresponding to your profile.  
+✅ An estimate of your portfolio's average volatility and potential return.  
+✅ A proposal adapted to the amount invested, with an adjusted number of products for greater diversification.  
 
 This simulator uses historical financial data from the last 5 years to assess asset performance and volatility.
 
@@ -151,17 +151,17 @@ if submitted:
         st.markdown(f"**Average Portfolio Volatility:** `{avg_vol:.2%}`")
         st.markdown(f"**Average Portfolio Return:** `{avg_ret:.2%}`")
 
-        # Adding a conclusion text with variables
+        # Adding a conclusion text with variables, each item on a new line
         st.markdown(f"""
         🎉 Congratulations! Based on the details you provided, here is your customized portfolio:
 
-        ✅ **Investment Amount**: €{amount}
-        ✅ **Risk Profile**: {risk_profile}
-        ✅ **Investment Horizon**: {horizon}
-        ✅ **Desired Return**: {desired_return}% per year
+        ✅ **Investment Amount**: €{amount}  
+        ✅ **Risk Profile**: {risk_profile}  
+        ✅ **Investment Horizon**: {horizon}  
+        ✅ **Desired Return**: {desired_return}% per year  
 
-        📊 **Average Portfolio Volatility**: `{avg_vol:.2%}`
-        📈 **Average Portfolio Return**: `{avg_ret:.2%}`
+        📊 **Average Portfolio Volatility**: `{avg_vol:.2%}`  
+        📈 **Average Portfolio Return**: `{avg_ret:.2%}`  
 
         We hope this helps you on your investment journey! 💪
         """)
